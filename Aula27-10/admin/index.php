@@ -24,7 +24,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Padoka</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -44,7 +44,7 @@
           Usuários
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Cadastrar</a>
+          <a class="dropdown-item" href="index.php?pagina=formCadastroUsuario.php&isAutenticate=1">Cadastrar</a>
           <a class="dropdown-item" href="#">Manutenção</a>
           <a class="dropdown-item" href="#">Relatórios</a>
         </div>
@@ -62,7 +62,25 @@
     </ul>
   </div>
 </nav>
-    
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <h1>Cadastro de Usuários</h1>
+            <?php
+                if(isset($_GET["pagina"]) &&
+                !empty($_GET["pagina"])){
+                    $pagina = $_GET["pagina"];
+                    include("$pagina");
+                }else{
+                    echo "Home";
+                }
+            ?>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
     
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -74,7 +92,7 @@
 ?>
 
 
-<div class="container">
+<!--<div class="container">
   <div class="row">
     <div class="col-sm">
       Uma de três colunas
@@ -88,3 +106,5 @@
   </div>
 </div>
 https://getbootstrap.com.br/docs/4.1/layout/grid/
+
+-->
