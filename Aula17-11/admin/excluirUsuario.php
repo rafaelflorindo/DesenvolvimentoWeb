@@ -6,6 +6,5 @@ if(isset($_GET["id"]) && !empty($_GET["id"])){
     "root", "","padoka");  
     $resultado = $conectar->query($sql);
 }else{
-    header("location: index.php?pagina=
-    listarUsuario.php&isAutenticate=1");
+    header("location: index.php?pagina=listarUsuario.php&isAutenticate=1");
 }
