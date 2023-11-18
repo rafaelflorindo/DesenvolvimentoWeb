@@ -24,32 +24,30 @@
         while($linha = $resultado->fetch_array())
             $lista = $linha;
         
-            echo $lista["nome"];
+            //echo $lista["nome"];
 ?>
-
-
-<form action = "cadastrarUsuario.php" method="POST">
+<form action = "editarUsuario.php" method="POST">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputNome">Nome</label>
-      <input type="text" class="form-control" name = "nome"
+      <input type="text" value="<?=$lista["nome"];?>" class="form-control" name = "nome"
       id="inputNome" placeholder="Nome do usuário" required>
     </div>
     <div class="form-group col-md-6">
       <label for="inputEmail">E-mail</label>
-      <input type="email" class="form-control"  name = "email"
+      <input type="email"  value="<?=$lista["email"];?>"class="form-control"  name = "email"
       id="inputEmail" placeholder="Email" required>
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-3">
       <label for="inputLogin">Login</label>
-      <input type="text" class="form-control"  name = "login"
+      <input type="text" value="<?=$lista["login"];?>" class="form-control"  name = "login"
       id="inputLogin" placeholder="Login do Usuário">
     </div>
     <div class="form-group col-md-3">
       <label for="inputPassword4">Senha</label>
-      <input type="password" class="form-control"  name = "senha" id="inputPassword4" placeholder="Senha">
+      <input type="password"  value="<?=$lista["senha"];?>" class="form-control"  name = "senha" id="inputPassword4" placeholder="Senha">
     </div>
     <div class="form-group col-md-6">
         <label for="exampleFormControlFile1">Exemplo de input de arquivo</label>
@@ -59,21 +57,21 @@
   <div class="form-row">
     <div class="form-group col-md-6">
         <label for="inputAddress">Endereço</label>
-        <input type="text" class="form-control"  name = "endereco" id="inputAddress" placeholder="Nome da rua/avenida">
+        <input type="text" value="<?=$lista["endereco"];?>" class="form-control"  name = "endereco" id="inputAddress" placeholder="Nome da rua/avenida">
     </div>
     <div class="form-group col-md-2">
         <label for="inputAddress2">Número</label>
-        <input type="text" class="form-control"  name = "numero" id="inputAddress2" placeholder="Número.">
+        <input type="text"  value="<?=$lista["numero"];?>"class="form-control"  name = "numero" id="inputAddress2" placeholder="Número.">
     </div>
     <div class="form-group col-md-4">
         <label for="inputAddress2">Complemento</label>
-        <input type="text" class="form-control" name = "complemento" id="inputAddress2" placeholder="Apartamento, hotel, casa, etc.">
+        <input type="text"  value="<?=$lista["complemento"];?>"class="form-control" name = "complemento" id="inputAddress2" placeholder="Apartamento, hotel, casa, etc.">
     </div>
 </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">Cidade</label>
-      <input type="text" class="form-control" name = "cidade" id="inputCity">
+      <input type="text"  value="<?=$lista["cidade"];?>"class="form-control" name = "cidade" id="inputCity">
     </div>
     <div class="form-group col-md-4">
       <label for="inputEstado">Estado</label>
@@ -85,7 +83,7 @@
     </div>
     <div class="form-group col-md-2">
       <label for="inputCEP">CEP</label>
-      <input type="text" class="form-control" name = "cep" id="inputCEP">
+      <input type="text"  value="<?=$lista["cep"];?>"class="form-control" name = "cep" id="inputCEP">
     </div>
   </div>
   <div class="form-group">
@@ -96,7 +94,12 @@
       </label>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Entrar</button>
+  
+  <input type="hidden" 
+  name="id" 
+  value="<?=$lista["id"];?>">
+
+  <button type="submit" class="btn btn-primary">Atualizar</button>
 </form>
 <?php
 }else{
